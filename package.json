@@ -1,0 +1,40 @@
+{
+  "name": "@wa-voice/sdk",
+  "version": "1.0.12",
+  "description": "Official SDK for the WA Voice Engine — WhatsApp Business Calling via Meta WebRTC APIs",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./browser": "./src/browser/VoiceAgentSDK.js",
+    "./node": "./src/node/VoiceServerSDK.js"
+  },
+  "peerDependencies": {
+    "mediasoup-client": "^3.7.0"
+  },
+  "peerDependenciesMeta": {
+    "mediasoup-client": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "whatsapp",
+    "voice",
+    "webrtc",
+    "mediasoup",
+    "calling"
+  ],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Veevo-Admin-Web/Spext_Voice_Call_SDK.git"
+  },
+  "homepage": "https://github.com/Veevo-Admin-Web/Spext_Voice_Call_SDK#readme",
+  "files": [
+    "src",
+    "README.md"
+  ]
+}
