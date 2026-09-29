@@ -926,7 +926,7 @@ export class VoiceAgentSDK {
 
   /**
    * Enable WhatsApp calling for the account tied to the configured hash.
-   * Uses the Spext wa-calling proxy → WA Voice `POST /voice/calling/enable`.
+   * Calls POST /voice/calling/enable on the consumer API (baseUrl from config).
    */
   async enableCalling(options = {}) {
     await this._ensureAccountResolved();

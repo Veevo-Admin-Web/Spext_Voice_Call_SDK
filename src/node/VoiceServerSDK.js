@@ -1,6 +1,6 @@
 /**
  * High-level server-side SDK for backend integrations.
- * Handles settings, permissions, call orchestration, and calling enable (via Spext proxy).
+ * Handles settings, permissions, call orchestration, and calling enable.
  * Does NOT include WebRTC — agent media is browser-only.
  */
 import { VoiceApiClient } from '../VoiceApiClient.js';
@@ -8,7 +8,7 @@ import { VoiceApiClient } from '../VoiceApiClient.js';
 export class VoiceServerSDK {
   /**
    * @param {object} config
-   * @param {string} config.baseUrl - Spext wa-calling proxy base URL (for enable) or Voice API base URL
+   * @param {string} config.baseUrl - Voice consumer API base URL (from GET /wa-calling/config)
    * @param {number|string} [config.accountId] - optional; resolved from hash when omitted
    * @param {string} config.hashKey
    * @param {typeof fetch} [config.fetchImpl]
@@ -96,11 +96,11 @@ export class VoiceServerSDK {
     throw new Error(`Call ${callId} did not reach status ${targetStatus} within ${timeoutMs}ms`);
   }
 
-  // ─── Calling enable (consumer API via Spext proxy or direct) ─────────────
+  // ─── Calling enable (consumer API) ──────────────────────────────────────
 
   /**
    * Enable WhatsApp calling for the account tied to the configured hash.
-   * Requires baseUrl to be the Spext wa-calling proxy (see GET /wa-calling/config).
+   * Requires baseUrl from GET /wa-calling/config (voice_api_base_url).
    * accountId is optional when the hash alone resolves the account.
    */
   async enableCallingForAccount(accountId, options = {}) {

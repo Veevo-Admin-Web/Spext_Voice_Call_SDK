@@ -389,7 +389,7 @@ export class AgentMedia {
     if (candidate_ips.length && candidate_ips.every((ip) => ip === '127.0.0.1' || ip === 'localhost')) {
       throw new Error(
         'Voice server returned localhost ICE (127.0.0.1) but mediasoup runs on a remote host. ' +
-        'Restart the voice service after the ICE fix, or use VPN to reach the voice LAN (172.18.x).'
+        'Configure a publicly reachable ICE/media host on the voice service.'
       );
     }
 

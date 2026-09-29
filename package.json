@@ -27,5 +27,14 @@
     "mediasoup",
     "calling"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Veevo-Admin-Web/Spext_Voice_Call_SDK.git"
+  },
+  "homepage": "https://github.com/Veevo-Admin-Web/Spext_Voice_Call_SDK#readme",
+  "files": [
+    "src",
+    "README.md"
+  ]
 }

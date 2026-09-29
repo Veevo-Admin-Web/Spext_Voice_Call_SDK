@@ -122,9 +122,8 @@ export class VoiceApiClient {
 
   /**
    * Enable WhatsApp calling for the account identified by hash credentials.
-   * Calls POST /voice/calling/enable on the WA Voice consumer API.
-   * When using Spext, baseUrl is voice_api_base_url from GET /wa-calling/config
-   * (proxied as /wa-calling/voice/calling/enable).
+   * Calls POST /voice/calling/enable on the consumer API.
+   * Use voice_api_base_url from GET /wa-calling/config as baseUrl.
    */
   enableCalling(options = {}) {
     return this._request('POST', '/voice/calling/enable', options);
